@@ -8,8 +8,8 @@ const CustomLoading = () => {
     <SafeAreaView style={styles.container}>
       <LottieView
         source={lotties.loading}
-        loop
-        autoPlay
+        autoPlay={true}
+        loop={true}
         style={{
           width: 100,
           height: 100,

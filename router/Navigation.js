@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {useColorScheme} from 'react-native';
+import {useColorScheme, StatusBar} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
 import auth from '@react-native-firebase/auth';
@@ -141,6 +141,11 @@ const Navigation = () => {
       onReady={() => RNBootSplash.hide()}
       theme={appMode === 'dark' ? darkTheme : lightTheme}>
       {user ? <AppStack /> : <AuthStack />}
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle={appMode === 'dark' ? 'light-content' : 'dark-content'}
+      />
       {netInfo.isConnected === false && <CustomInternet />}
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, DevSettings} from 'react-native';
+import {View, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import SwitchToggle from 'react-native-switch-toggle';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -12,6 +12,7 @@ import {useNavigation, useTheme} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import {changeMode} from '../../redux/actions/settingAction';
 import {getValue, setValue as setValueMKKV} from '../../helpers/mmkv';
+import RNRestart from 'react-native-restart';
 
 const Setting = () => {
   const navigation = useNavigation();
@@ -89,7 +90,7 @@ const Setting = () => {
                   dropDownContainerStyle={styles.dropDownContainerStyle}
                   onSelectItem={item => {
                     setValueMKKV('language', item.value);
-                    DevSettings.reload();
+                    RNRestart.Restart();
                   }}
                 />
               }

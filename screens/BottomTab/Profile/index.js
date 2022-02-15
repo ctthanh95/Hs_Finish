@@ -6,6 +6,8 @@ import {
   ScrollView,
   Linking,
   Modal,
+  PermissionsAndroid,
+  Platform,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {colors as constantColors} from '../../../constants';
@@ -165,6 +167,32 @@ const Profile = () => {
       .signOut()
       .then(() => console.log('User signed out!'));
   };
+  const checkPermission = async () => {
+    if (Platform.OS === 'android') {
+      try {
+        const granted1 = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.CAMERA,
+          {
+            title: 'Hs App',
+            message: 'Hs App access to your camera',
+          },
+        );
+        const granted2 = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+          {
+            title: 'Hs App',
+            message: 'Hs App access to your camera',
+          },
+        );
+      } catch (err) {
+        console.warn(err);
+      }
+    }
+  };
+  useEffect(() => {
+    checkPermission();
+  }, []);
+
   useEffect(() => {
     setIsLoading(true);
     let uid = auth().currentUser?.providerData[0]?.uid;

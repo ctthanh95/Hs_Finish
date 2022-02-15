@@ -33,8 +33,8 @@ const CustomConfirm = ({modal, setModal, onPress}) => {
           </View>
           <View style={styles.circle}>
             <LottieView
-              autoPlay
-              loop
+              autoPlay={true}
+              loop={true}
               source={lotties.confirm}
               style={{
                 width: 125,

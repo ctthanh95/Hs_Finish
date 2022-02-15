@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    bottom: 10,
-    right: 10,
+    bottom: 5,
+    right: 5,
   },
   txtButton: {
     color: colors.white,

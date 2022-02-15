@@ -29,7 +29,7 @@ const validationSchema = Yup.object().shape({
   password2: Yup.string()
     .required('Required')
     .min(6, 'Least 6 characters')
-    .oneOf([Yup.ref('password1'), null], 'Passwords must match'),
+    .oneOf([Yup.ref('password1'), null], 'Not match'),
 });
 
 const Account = () => {
@@ -54,16 +54,23 @@ const Account = () => {
   };
   const handleChangePassword = password => {
     closeModal();
+    setIsLoading(true);
     auth()
       .currentUser.updatePassword(password)
       .then(() => {
         setIsSuccess(true);
-        setIsShowAlert(true);
+        setIsLoading(false);
+        setTimeout(() => {
+          setIsShowAlert(true);
+        }, 100);
       })
       .catch(error => {
         if (error.code === 'auth/requires-recent-login') {
           setIsSuccess(false);
-          setIsShowAlert(true);
+          setIsLoading(false);
+          setTimeout(() => {
+            setIsShowAlert(true);
+          }, 100);
         }
       });
   };

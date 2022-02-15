@@ -159,6 +159,7 @@ const Order = () => {
               },
             ]}>
             <CustomButton
+              disabled={item.status === 0 && tab === 'History' ? true : false}
               height={40}
               title={tab === 'History' ? 'Rate' : 'Cancel'}
               color={constantColors.white}

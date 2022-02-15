@@ -202,6 +202,10 @@ const Home = ({onPress}) => {
         try {
           const granted = await PermissionsAndroid.request(
             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+            {
+              title: 'Hs App',
+              message: 'Hs App access to your location ',
+            },
           );
           if (granted === PermissionsAndroid.RESULTS.GRANTED) {
             getLocation();

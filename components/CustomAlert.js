@@ -27,8 +27,8 @@ const CustomAlert = ({modal, setModal, isSuccess, description, onPress}) => {
           />
           <View style={styles.circle}>
             <LottieView
-              autoPlay
-              loop
+              autoPlay={true}
+              loop={true}
               source={isSuccess ? lotties.success : lotties.fail}
               style={{
                 width: 100,

@@ -12,9 +12,11 @@ const CustomButton = ({
   onPress,
   borderRadius = 10,
   styleTouch,
+  ...rest
 }) => {
   return (
     <TouchableOpacity
+      {...rest}
       onPress={onPress}
       style={[
         styles.container,
