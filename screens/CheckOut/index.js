@@ -40,6 +40,7 @@ const CheckOut = () => {
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [description, setDescription] = useState('');
   const [code, setCode] = useState('');
+  const [info, setInfo] = useState({});
   const [isCheck, setIsCheck] = useState(false);
   const navigateScreen = screen => {
     navigation.navigate(screen);
@@ -59,6 +60,9 @@ const CheckOut = () => {
     if (isEmpty(check)) {
       setCode('');
       setDescription('Please add your cart!');
+      setIsShowAlert(true);
+    } else if (info?.phoneNumber === null) {
+      setDescription('Please update your information!');
       setIsShowAlert(true);
     } else {
       setIsLoading(true);
@@ -141,6 +145,12 @@ const CheckOut = () => {
         setYourCard(arr);
         setCheck(arr[0]);
       });
+    const subscriber2 = firestore()
+      .collection('user')
+      .doc(uid)
+      .onSnapshot(documentSnapshot => {
+        setInfo(documentSnapshot.data());
+      });
     const subscriber1 = firestore()
       .collection('order')
       .doc(uid)
@@ -153,6 +163,7 @@ const CheckOut = () => {
     return () => {
       subscriber();
       subscriber1();
+      subscriber2();
     };
   }, []);
   const Money = ({title, money, isMarginTop}) => {
@@ -175,7 +186,7 @@ const CheckOut = () => {
             <View style={styles.wrap}>
               <CustomHeader title="CHECKOUT" onPress={navigateGoBack} />
               <Text style={[styles.txtAdd, {color: colors.text}]}>
-                Your card {JSON.stringify(isCheck)}
+                Your card
               </Text>
               {yourCard.length ? (
                 yourCard.map(e => {
