@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CustomText} from '../../../../components';
 import {colors} from '../../../../constants';
@@ -29,7 +29,7 @@ const Tag = ({tag, setTag, data}) => {
   );
 };
 
-export default Tag;
+export default memo(Tag);
 const styles = StyleSheet.create({
   container: {
     flexWrap: 'wrap',

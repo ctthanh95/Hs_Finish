@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {colors as constantColors, fonts} from '../../../../constants';
@@ -42,7 +42,7 @@ const Menu = ({data, menu, setMenu}) => {
   );
 };
 
-export default Menu;
+export default memo(Menu);
 
 const styles = StyleSheet.create({
   container: {

@@ -30,6 +30,7 @@ import {
   DetailOrder,
   Coupon,
   Setting,
+  DetailNotification,
 } from '../screens';
 import {CustomInternet, CustomLoading} from '../components';
 import {getValue} from '../helpers/mmkv';
@@ -114,6 +115,10 @@ const Navigation = () => {
         <Stack.Screen name="Account" component={Account} />
         <Stack.Screen name="EditAccount" component={EditAccount} />
         <Stack.Screen name="DetailOrder" component={DetailOrder} />
+        <Stack.Screen
+          name="DetailNotification"
+          component={DetailNotification}
+        />
       </Stack.Navigator>
     );
   };

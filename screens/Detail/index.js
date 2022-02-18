@@ -296,7 +296,25 @@ const Detail = () => {
                     <Text style={styles.txtCalories}>{calorie} Calories</Text>
                   </View>
                   <TouchableOpacity
-                    onPress={() => handleFavorite({...route.params})}>
+                    onPress={() =>
+                      handleFavorite({
+                        calorie,
+                        category,
+                        description,
+                        distance,
+                        id,
+                        image,
+                        isFavorite: false,
+                        menu,
+                        name,
+                        price,
+                        range,
+                        size: dataSize,
+                        star,
+                        tag,
+                        time,
+                      })
+                    }>
                     <CustomIcon
                       type="AntDesign"
                       name={isHeart ? 'heart' : 'hearto'}

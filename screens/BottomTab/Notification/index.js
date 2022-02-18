@@ -31,13 +31,16 @@ export default function Notification() {
   const navigateGoBack = () => {
     navigation.goBack();
   };
-  const navigateScreen = screen => {
-    navigation.navigate(screen);
+  const navigateScreen = (screen, item) => {
+    navigation.navigate(screen, item);
+  };
+  const handleClick = item => {
+    navigateScreen('DetailNotification', item);
   };
   const Item = ({item}) => {
     let date = moment(item.time, 'DD/MM/YYYY HH:mm:ss').format();
     return (
-      <TouchableOpacity style={styles.wItem}>
+      <TouchableOpacity style={styles.wItem} onPress={() => handleClick(item)}>
         <Image source={images.discount} style={styles.image} />
         <View style={styles.wTxt}>
           <Text style={styles.name}>{item.name}</Text>

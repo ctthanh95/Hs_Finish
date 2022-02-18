@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import Item from './Item';
@@ -32,7 +32,7 @@ const Recommend = ({data, recommendRef}) => {
   );
 };
 
-export default Recommend;
+export default memo(Recommend);
 
 const styles = StyleSheet.create({
   container: {

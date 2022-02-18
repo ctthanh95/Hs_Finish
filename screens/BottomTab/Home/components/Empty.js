@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {colors, fonts} from '../../../../constants';
@@ -10,7 +10,7 @@ const Empty = () => {
   );
 };
 
-export default Empty;
+export default memo(Empty);
 
 const styles = StyleSheet.create({
   text: {

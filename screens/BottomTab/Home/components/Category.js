@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {FlatList, Image, StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {CustomText} from '../../../../components';
@@ -48,7 +48,7 @@ const Category = ({data, category, setCategory}) => {
   );
 };
 
-export default Category;
+export default memo(Category);
 
 const styles = StyleSheet.create({
   container: {

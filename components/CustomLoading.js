@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet} from 'react-native';
 import LottieView from 'lottie-react-native';
@@ -19,7 +19,7 @@ const CustomLoading = () => {
   );
 };
 
-export default CustomLoading;
+export default memo(CustomLoading);
 
 const styles = StyleSheet.create({
   container: {

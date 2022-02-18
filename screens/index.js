@@ -21,6 +21,7 @@ import Rate from './Rate';
 import DetailOrder from './DetailOrder';
 import Coupon from './Coupon';
 import Setting from './Setting';
+import DetailNotification from './DetailNotification';
 export {
   Onboarding,
   SignIn,
@@ -45,4 +46,5 @@ export {
   DetailOrder,
   Coupon,
   Setting,
+  DetailNotification,
 };

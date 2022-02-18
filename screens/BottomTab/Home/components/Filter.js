@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
   Modal,
   StyleSheet,
@@ -31,12 +31,12 @@ const Filter = ({modalFilter, setModalFilter, setFilter}) => {
   const closeModal = () => {
     setModalFilter(false);
   };
-  const changeDistance = value => {
+  const changeDistance = useCallback(value => {
     setDistance(value);
-  };
-  const changePrice = value => {
+  }, []);
+  const changePrice = useCallback(value => {
     setPrice(value);
-  };
+  }, []);
   const handleFilter = () => {
     setFilter({
       distance,

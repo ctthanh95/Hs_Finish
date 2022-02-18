@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
@@ -44,7 +44,7 @@ const Slider = ({values, min, max, step, description, onValuesChange}) => {
   );
 };
 
-export default Slider;
+export default memo(Slider);
 
 const styles = StyleSheet.create({
   container: {

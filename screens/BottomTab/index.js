@@ -27,6 +27,7 @@ const BottomTab = () => {
   return (
     <>
       <Tab.Navigator
+        // backBehavior="none"
         screenOptions={({route}) => ({
           tabBarIcon: ({color, size}) => {
             switch (route.name) {

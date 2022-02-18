@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -47,4 +47,4 @@ const CustomIcon = ({type, ...props}) => {
   }
 };
 
-export default CustomIcon;
+export default memo(CustomIcon);

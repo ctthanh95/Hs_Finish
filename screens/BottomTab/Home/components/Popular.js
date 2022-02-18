@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {
   StyleSheet,
   Text,
@@ -17,7 +17,6 @@ import {
   images,
 } from '../../../../constants';
 import Empty from './Empty';
-import {CustomIcon} from '../../../../components';
 const Popular = ({data, popularRef}) => {
   const navigation = useNavigation();
   const {colors} = useTheme();
@@ -82,7 +81,7 @@ const Popular = ({data, popularRef}) => {
   );
 };
 
-export default Popular;
+export default memo(Popular);
 
 const styles = StyleSheet.create({
   container: {

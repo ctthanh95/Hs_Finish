@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors} from '../../../../constants';
 import {CustomText} from '../../../../components';
@@ -30,7 +30,7 @@ const Delivery = ({delivery, setDelivery}) => {
   );
 };
 
-export default Delivery;
+export default memo(Delivery);
 
 const styles = StyleSheet.create({
   container: {

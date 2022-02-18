@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CustomIcon, CustomText} from '../../../../components';
 import {colors} from '../../../../constants';
@@ -38,7 +38,7 @@ const Star = ({star, setStar}) => {
   );
 };
 
-export default Star;
+export default memo(Star);
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',

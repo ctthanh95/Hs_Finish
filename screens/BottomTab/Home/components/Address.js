@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 import {
   StyleSheet,
   Text,
@@ -141,7 +141,7 @@ const Address = ({bottomSheetModalRef}) => {
   );
 };
 
-export default Address;
+export default memo(Address);
 
 const styles = StyleSheet.create({
   container: {

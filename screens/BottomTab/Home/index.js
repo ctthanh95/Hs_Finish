@@ -7,6 +7,7 @@ import {
   PermissionsAndroid,
   Platform,
   BackHandler,
+  Alert,
 } from 'react-native';
 import {useBottomSheetModal} from '@gorhom/bottom-sheet';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -156,8 +157,8 @@ const Home = ({onPress}) => {
     }
   };
   const scrollFlatList = () => {
-    popularRef.current.scrollToOffset({animated: false, offset: 0});
-    recommendRef.current.scrollToOffset({animated: false, offset: 0});
+    popularRef.current?.scrollToOffset({animated: false, offset: 0});
+    recommendRef.current?.scrollToOffset({animated: false, offset: 0});
   };
   const handleBottomSheetModal = () => {
     bottomSheetModalRef.current?.present();
@@ -280,26 +281,6 @@ const Home = ({onPress}) => {
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       onPress();
-    });
-    return unsubscribe;
-  }, [navigation]);
-  //
-  function handleBackButtonClick() {
-    dismiss();
-    return true;
-  }
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
-    });
-    return unsubscribe;
-  }, [navigation]);
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('blur', () => {
-      BackHandler.removeEventListener(
-        'hardwareBackPress',
-        handleBackButtonClick,
-      );
     });
     return unsubscribe;
   }, [navigation]);
