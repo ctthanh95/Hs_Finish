@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint .",
     "pod": "npx pod-install",
-    "clean": "cd android &&./gradlew clean && cd .."
+    "clean": "cd android &&./gradlew clean && cd ..",
+    "apk": "cd android &&./gradlew app:assembleRelease && cd .."
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4",

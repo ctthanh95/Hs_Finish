@@ -1,28 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  Alert,
-} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import CircleCheckBox, {LABEL_POSITION} from 'react-native-circle-checkbox';
+import FastImage from 'react-native-fast-image';
+import {CustomHeader, CustomLoading} from '../../components';
 import styles from './styles';
-import {
-  CustomButton,
-  CustomHeader,
-  CustomIcon,
-  CustomInput,
-  CustomLoading,
-  CustomAlert,
-  CustomConfirm,
-} from '../../components';
-import {colors as constantColors, images} from '../../constants';
 //
 import {useNavigation, useTheme, useRoute} from '@react-navigation/native';
-import FastImage from 'react-native-fast-image';
 //
 
 const DetailCard = () => {
