@@ -8,7 +8,7 @@ const getAddress = async (latitude, longitude) => {
     let rs = response?.data?.Response?.View[0]?.Result[0]?.Location?.Address;
     return rs;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
   }
 };
 

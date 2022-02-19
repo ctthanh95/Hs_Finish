@@ -184,7 +184,7 @@ const Home = ({onPress}) => {
       },
       error => {
         // See error code charts below.
-        console.log(error.code, error.message);
+        // console.log(error.code, error.message);
       },
       {
         enableHighAccuracy: true,
@@ -211,10 +211,10 @@ const Home = ({onPress}) => {
           if (granted === PermissionsAndroid.RESULTS.GRANTED) {
             getLocation();
           } else {
-            console.log('location permission denied');
+            // console.log('location permission denied');
           }
         } catch (err) {
-          console.warn(err);
+          // console.warn(err);
         }
       }
     }

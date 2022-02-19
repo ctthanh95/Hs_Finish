@@ -112,7 +112,9 @@ const SignIn = () => {
           productFavorite: [],
         })
         .then()
-        .catch(error => console.log('SDSFDFDAS', error));
+        .catch(error => {
+          // console.log('SDSFDFDAS', error)
+        });
     }
   };
   return (

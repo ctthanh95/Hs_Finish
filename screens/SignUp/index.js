@@ -57,7 +57,9 @@ const SignUp = () => {
         addressSetting: '',
       })
       .then()
-      .catch(error => console.log('SDSFDFDAS', error));
+      .catch(error => {
+        // console.log('SDSFDFDAS', error)
+      });
     firestore()
       .collection('favorite')
       .doc(data.uid)
@@ -65,7 +67,9 @@ const SignUp = () => {
         productFavorite: [],
       })
       .then()
-      .catch(error => console.log('SDSFDFDAS', error));
+      .catch(error => {
+        // console.log('SDSFDFDAS', error)
+      });
   };
   const createWithEmail = (email, password, username) => {
     setIsLoading(true);
@@ -102,7 +106,6 @@ const SignUp = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={values => {
-                  // LoginWithEmail(values.email, values.password);
                   createWithEmail(
                     values.email,
                     values.password,
@@ -208,32 +211,6 @@ const SignUp = () => {
                   <Text style={styles.txtSign}>Sign In</Text>
                 </Text>
               </TouchableOpacity>
-              {/* <CustomButton
-                color={constantColors.white}
-                title="Continue With Facebook"
-                backgroundColor={constantColors.blue}
-                left={
-                  <CustomIcon
-                    type="AntDesign"
-                    name="facebook-square"
-                    size={24}
-                    color={constantColors.white}
-                  />
-                }
-              />
-              <CustomButton
-                color={constantColors.white}
-                title="Continue With Google"
-                backgroundColor={constantColors.grey}
-                left={
-                  <CustomIcon
-                    type="AntDesign"
-                    name="google"
-                    size={24}
-                    color={constantColors.white}
-                  />
-                }
-              /> */}
             </View>
           </ScrollView>
         </SafeAreaView>

@@ -74,7 +74,9 @@ const CheckOut = () => {
           address: firestore.FieldValue.arrayUnion(select),
         })
         .then()
-        .catch(error => console.log(error));
+        .catch(error => {
+          // console.log(error)
+        });
       if (isCheck) {
         firestore()
           .collection('order')
@@ -99,7 +101,7 @@ const CheckOut = () => {
             navigateScreen('Success');
           })
           .catch(error => {
-            console.log(error);
+            // console.log(error);
             setIsLoading(false);
           });
       } else {
@@ -126,7 +128,7 @@ const CheckOut = () => {
             navigateScreen('Success');
           })
           .catch(error => {
-            console.log(error);
+            // console.log(error);
             setIsLoading(false);
           });
       }

@@ -82,10 +82,10 @@ const Profile = () => {
           message: 'Hs',
         })
           .then(res => {
-            console.log(res);
+            // console.log(res);
           })
           .catch(err => {
-            err && console.log(err);
+            // err && console.log(err);
           });
       },
     },
@@ -165,7 +165,9 @@ const Profile = () => {
   const handleLogout = () => {
     auth()
       .signOut()
-      .then(() => console.log('User signed out!'));
+      .then(() => {
+        // console.log('User signed out!')
+      });
   };
   const checkPermission = async () => {
     if (Platform.OS === 'android') {
@@ -185,7 +187,7 @@ const Profile = () => {
           },
         );
       } catch (err) {
-        console.warn(err);
+        // console.warn(err);
       }
     }
   };
